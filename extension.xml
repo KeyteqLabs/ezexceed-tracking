@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<software>
+    <metadata>
+        <name>eZExceed Tracking</name>
+        <version>//autogen//</version>
+        <copyright>//autogen//</copyright>
+        <license>//autogen//</license>
+    </metadata>
+
+    <dependencies>
+        <requires>
+            <extension name="ezexceed" />
+        </requires>
+    </dependencies>
+</software>
