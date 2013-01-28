@@ -50,16 +50,21 @@ var tracker = function(app)
         'stack:push': function(path, view, options)
         {
             var opts = parseOpts(options);
-            opts.push = true;
-            opts.path = path;
-            mixpanel.track('stack:push', opts);
+            opts.stack = 'push';
+            mixpanel.track(path, opts);
         },
         'stack:pop': function(path, view, options)
         {
             var opts = parseOpts(options);
-            opts.pop = true;
-            opts.path = path;
-            mixpanel.track('stack:pop', opts);
+            opts.stack = 'pop';
+            mixpanel.track(path, opts);
+        },
+        'all' : function(event)
+        {
+            if (!event.match('stack')) {
+                var opts = parseOpts(_.toArray(arguments)[1]);
+                mixpanel.track(event, opts);
+            }
         }
     });
 };
